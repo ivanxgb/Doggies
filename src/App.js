@@ -11,7 +11,7 @@ function App() {
 
   return (
     <main>
-      <h1 className="tittle">Generador de Perritos de Ivan</h1>
+      <h1 className="tittle">Generador de Imagenes de Perritos</h1>
       <button onClick={getImage} className="button">
         Imagen nueva
       </button>
