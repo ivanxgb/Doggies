@@ -1,17 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import { fetchImage } from "./fetch.js";
+import { dogOrCat } from "./fetch.js";
 
 function App() {
   const [image, setImage] = useState("");
 
   const getImage = () => {
-    fetchImage().then((json) => setImage(json.message));
+    dogOrCat().then((image) => setImage(image));
   };
 
   return (
     <main>
-      <h1 className="tittle">Generador de Imagenes de Perritos</h1>
+      <h1 className="tittle">Generador de Imagenes de Perritos y Gatitos</h1>
       <button onClick={getImage} className="button">
         Imagen nueva
       </button>
