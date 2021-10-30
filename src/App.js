@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { fetchImage } from "./fetch.js";
 
 function App() {
+  const [image, setImage] = useState("");
+
+  const getImage = () => {
+    fetchImage().then((json) => setImage(json.message));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <h1 className="tittle">Generador de Perritos de Ivan</h1>
+      <button onClick={getImage} className="button">
+        Imagen nueva
+      </button>
+      <figure>
+        <img src={image} alt=""></img>
+      </figure>
+    </main>
   );
 }
 
